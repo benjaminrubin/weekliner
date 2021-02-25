@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
-import { Table } from 'semantic-ui-react';
 import Task from './Task';
+import './week.css';
 
 class Day extends PureComponent {
     constructor(props) {
@@ -11,73 +11,42 @@ class Day extends PureComponent {
         }
     }
 
-    // Selects all text within the contenteditable area onFocus
-    selectElementContents = (el) => {
-        var range = document.createRange();
-        range.selectNodeContents(el);
-        var sel = window.getSelection();
-        sel.removeAllRanges();
-        sel.addRange(range);
-    }
+    // // Selects all text within the contenteditable area onFocus
+    // selectElementContents = (el) => {
+    //     var range = document.createRange();
+    //     range.selectNodeContents(el);
+    //     var sel = window.getSelection();
+    //     sel.removeAllRanges();
+    //     sel.addRange(range);
+    // }
 
     render() {
+
+        // Handles the overlapping of the days
+        const overlapDay = {
+            position: "relative",
+            left: `-${this.props.dayNumber}px`
+        }
+
+
+
         return (
-            <>
-                <Table.Row >
 
-                    <Table.Cell >
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <input type="checkbox" style={{ display: "block", marginRight: ".78571429em" }} tabIndex="-1" />
-                            <div contentEditable="true" style={{ width: "100%", position: "relative" }} tabIndex="0" onFocus="selectElementContents(this)"></div>
-                        </div>
-                    </Table.Cell>
+            <div style={this.props.firstDay ? null : overlapDay}>
+                <table className="ui celled table" style={{ width: "200px", borderRadius: 0, left: "-1px" }}>
+                    <thead>
+                        <tr className="ui gray">
+                            <th className="ui text center aligned">{this.props.day}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        < Task />
+                        < Task />
+                        < Task />
 
-                    <Table.Cell >
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <input type="checkbox" style={{ display: "block", marginRight: ".78571429em" }} tabIndex="-1" />
-                            <div contentEditable="true" style={{ width: "100%", position: "relative" }} tabIndex="0" onFocus="selectElementContents(this)"></div>
-                        </div>
-                    </Table.Cell>
-
-                    <Table.Cell >
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <input type="checkbox" style={{ display: "block", marginRight: ".78571429em" }} tabIndex="-1" />
-                            <div contentEditable="true" style={{ width: "100%", position: "relative" }} tabIndex="0" onFocus="selectElementContents(this)"></div>
-                        </div>
-                    </Table.Cell>
-
-                    <Table.Cell >
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <input type="checkbox" style={{ display: "block", marginRight: ".78571429em" }} tabIndex="-1" />
-                            <div contentEditable="true" style={{ width: "100%", position: "relative" }} tabIndex="0" onFocus="selectElementContents(this)"></div>
-                        </div>
-                    </Table.Cell>
-
-                    <Table.Cell >
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <input type="checkbox" style={{ display: "block", marginRight: ".78571429em" }} tabIndex="-1" />
-                            <div contentEditable="true" style={{ width: "100%", position: "relative" }} tabIndex="0" onFocus="selectElementContents(this)"></div>
-                        </div>
-                    </Table.Cell>
-
-                    <Table.Cell >
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <input type="checkbox" style={{ display: "block", marginRight: ".78571429em" }} tabIndex="-1" />
-                            <div contentEditable="true" style={{ width: "100%", position: "relative" }} tabIndex="0" onFocus="selectElementContents(this)"></div>
-                        </div>
-                    </Table.Cell>
-
-                    <Table.Cell >
-                        <div style={{ display: "flex", alignItems: "center" }}>
-                            <input type="checkbox" style={{ display: "block", marginRight: ".78571429em" }} tabIndex="-1" />
-                            <div contentEditable="true" style={{ width: "100%", position: "relative" }} tabIndex="0" onFocus="selectElementContents(this)"></div>
-                        </div>
-                    </Table.Cell>
-
-
-
-                </Table.Row>
-            </>
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }

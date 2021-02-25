@@ -1,0 +1,10 @@
+.week {
+  display: flex;
+  flex-direction: row;
+}
+
+.ben-container {
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+}

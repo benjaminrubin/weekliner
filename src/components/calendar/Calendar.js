@@ -13,13 +13,28 @@ class Calendar extends PureComponent {
 
 
 
+
     render() {
+
+        let leftEdge = {
+
+        }
+
+        let RightEdge = {
+
+        }
+
+        let dayHeader = {
+            borderRadius: "0 !important"
+        }
+
+
         return (
             <Container>
                 <Table celled>
                     <Table.Header>
                         <Table.Row>
-                            <Table.HeaderCell textAlign="center">Monday</Table.HeaderCell>
+                            <Table.HeaderCell style={dayHeader} textAlign="center">Monday</Table.HeaderCell>
                             <Table.HeaderCell textAlign="center">Tuesday</Table.HeaderCell>
                             <Table.HeaderCell textAlign="center">Wednesday</Table.HeaderCell>
                             <Table.HeaderCell textAlign="center">Thursday</Table.HeaderCell>

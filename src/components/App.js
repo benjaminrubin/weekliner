@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Calendar from './calendar/Calendar';
+import Week from './calendar/Week';
 import NavigationBar from './NavigationBar';
 
 
@@ -16,7 +17,8 @@ class App extends Component {
         return (
             <div>
                 <NavigationBar />
-                < Calendar />
+                {/* < Calendar /> */}
+                < Week />
             </div>
         )
     }

@@ -1,0 +1,27 @@
+td {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+td:hover {
+  background: #f0faff;
+  cursor: pointer;
+}
+
+/* Remove hover color if child is in focus  */
+td:focus-within {
+  /* background: #fcf8e1; */
+  cursor: text;
+}
+
+.content {
+  position: relative;
+  width: "100%";
+}
+
+.check-box {
+  display: "block";
+  margin-right: ".78571429em";
+  padding: ".78571429em" !important;
+}
