@@ -46,10 +46,27 @@ class DateAndTime extends PureComponent {
             marginBottom: "2rem"
         }
 
+
+        // If the date/time isn't set yet
+        if (!this.state.date) {
+
+            // Return a loader to indicate the date and time
+            return (
+                <div>
+                    <div class="ui active centered inline loader">
+                    </div>
+                    <div style={{ ...textCentered, marginTop: "0.6rem" }}>
+                        Fetching your date and time...
+                </div>
+
+                </div >
+            )
+        }
+
         return (
             <div style={textCentered}>
                 <h3 >{this.state.date}</h3>
-                <h4 style={{ marginTop: ".5rem" }}>{this.state.time}</h4>
+                <h3 style={{ marginTop: ".5rem" }}>{this.state.time}</h3>
             </div>
         )
     }
