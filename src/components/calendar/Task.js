@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import ContentEditable from 'react-contenteditable'
+import ReactDOM from 'react-dom'
 import './task.css'
 
 class Task extends PureComponent {
@@ -7,13 +8,37 @@ class Task extends PureComponent {
         super(props)
 
         this.state = {
-
+            completed: null,
+            description: ""
         }
     }
 
 
     contentOnChange = (e) => {
-        console.log(e.target.value)
+        this.setState({ description: e.target.value });
+
+    }
+
+    checkBoxOnChange = (e) => {
+
+        if (this.state.completed) {
+            this.setState({ completed: false });
+        }
+        else {
+            this.setState({ completed: true });
+        }
+
+    }
+
+    isCompleted = () => {
+
+        // If task is completed
+        if (this.state.completed) {
+
+            // Return "completed" className
+            return "completed";
+        }
+        return "";
     }
 
     render() {
@@ -28,12 +53,13 @@ class Task extends PureComponent {
 
         return (
             <tr>
-                <td >
-                    <input type="checkbox" className="check-box" tabIndex="-1" />
+                <td className={this.isCompleted()} >
+                    <input type="checkbox" className="check-box" tabIndex="-1" onClick={this.checkBoxOnChange} />
                     <ContentEditable
                         style={contentStyle}
                         tabindex="0"
                         onChange={this.contentOnChange}
+                        html={this.state.description}
                     ></ContentEditable>
                 </td>
             </tr>

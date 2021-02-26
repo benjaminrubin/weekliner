@@ -10,7 +10,7 @@ class NavigationBar extends PureComponent {
 
         return (
 
-            <Menu secondary pointing>
+            <Menu secondary >
                 <Menu.Item style={{ fontSize: 20 }}>
                     Weekliner
                 </Menu.Item>
@@ -26,28 +26,8 @@ class NavigationBar extends PureComponent {
 
             </Menu>
 
-
-
-
-
         )
     }
 }
 
-export default NavigationBar
-
-
-// <nav className="navbar navbar-light bg-light">
-// <div className="container">
-//     <a className="navbar-brand" href="#">
-//         <img src={logo} width="30" height="30" className="d-inline-block align-top mr-3" alt="" />
-//     Weekliner
-// </a>
-//     <div className="nav navbar-nav navbar-right d-flex flex-row">
-//         <div className="btn-nav mr-1"><div className="btn btn-primary btn-small navbar-btn" >Sign Up</div>
-//         </div>
-//         <div className="btn-nav"><div className="btn btn-secondary btn-small navbar-btn" >Log in</div>
-//         </div>
-//     </div>
-// </div>
-// </nav>
+export default NavigationBar;

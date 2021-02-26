@@ -5,7 +5,7 @@ td {
 }
 
 td:hover {
-  background: #f0faff;
+  background: #f9fafb;
   cursor: pointer;
 }
 
@@ -24,4 +24,13 @@ td:focus-within {
   display: "block";
   margin-right: ".78571429em";
   padding: ".78571429em" !important;
+}
+
+.completed {
+  background: #32b64a;
+  color: white;
+}
+
+.completed:hover {
+  background: #32b64a;
 }

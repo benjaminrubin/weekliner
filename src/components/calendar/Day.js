@@ -22,7 +22,8 @@ class Day extends PureComponent {
 
     render() {
 
-        // Handles the overlapping of the days
+        // Handles the overlapping of the columns so that
+        // their dividers are only 1px vs 2px
         const overlapDay = {
             position: "relative",
             left: `-${this.props.dayNumber}px`
@@ -32,7 +33,9 @@ class Day extends PureComponent {
 
         return (
 
+            // Add an overlap class to make vertical table lines thinner
             <div style={this.props.firstDay ? null : overlapDay}>
+
                 <table className="ui celled table" style={{ width: "200px", borderRadius: 0, left: "-1px" }}>
                     <thead>
                         <tr className="ui gray">
