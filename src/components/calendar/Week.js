@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Day from './Day';
+import Toolbar from './Toolbar';
 import './week.css';
 
 
@@ -19,6 +20,7 @@ class Week extends PureComponent {
 
         return (
             <div className="ui ben-container">
+                < Toolbar />
                 <div className="week">
 
                     < Day day={"Sunday"} dayNumber={1} />

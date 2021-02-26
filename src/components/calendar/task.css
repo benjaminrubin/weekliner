@@ -34,3 +34,10 @@ td:focus-within {
 .completed:hover {
   background: #32b64a;
 }
+
+.contenteditable-style {
+  width: "100%";
+  position: "relative";
+  margin-left: ".78571429em";
+  outline: 0;
+}

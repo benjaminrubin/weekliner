@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import ContentEditable from 'react-contenteditable'
-import ReactDOM from 'react-dom'
 import './task.css'
 
 class Task extends PureComponent {
@@ -13,6 +12,13 @@ class Task extends PureComponent {
         }
     }
 
+    componentDidMount() {
+
+        this.setState({
+            completed: this.props.completed,
+            description: this.props.description
+        })
+    }
 
     contentOnChange = (e) => {
         this.setState({ description: e.target.value });
@@ -43,13 +49,13 @@ class Task extends PureComponent {
 
     render() {
 
-
-        const contentStyle = {
+        let contentStyle = {
             width: "100%",
             position: "relative",
             marginLeft: ".78571429em",
             outline: 0
         }
+
 
         return (
             <tr>
