@@ -53,7 +53,7 @@ class DateAndTime extends PureComponent {
             // Return a loader to indicate the date and time
             return (
                 <div>
-                    <div class="ui active centered inline loader">
+                    <div className="ui active centered inline loader">
                     </div>
                     <div style={{ ...textCentered, marginTop: "0.6rem" }}>
                         Fetching your date and time...

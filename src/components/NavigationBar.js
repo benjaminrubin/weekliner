@@ -17,7 +17,7 @@ class NavigationBar extends PureComponent {
 
                 <Menu.Menu position="right">
                     <Menu.Item style={{ paddingRight: 0 }}>
-                        <Button content="Primary" primary>Sign up</Button>
+                        <Button primary>Sign up</Button>
                     </Menu.Item>
                     <Menu.Item>
                         <Button basic>Log in</Button>

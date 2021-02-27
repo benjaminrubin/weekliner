@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Day from './Day';
 import Toolbar from './Toolbar';
-import './week.css';
+import './stylesheets/week.css';
 
 
 class Week extends PureComponent {

@@ -1,0 +1,15 @@
+.day {
+  max-width: 200px;
+}
+
+/* These classes show/hide the add/remove
+    buttons on each day
+*/
+.day .add-remove-task-buttons {
+  opacity: 0;
+  transition: 0.32s;
+}
+
+.day:hover .add-remove-task-buttons {
+  opacity: 1;
+}

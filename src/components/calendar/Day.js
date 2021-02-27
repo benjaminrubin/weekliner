@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { Button, Icon } from 'semantic-ui-react'
 import Task from './Task';
-import './week.css';
+import './stylesheets/day.css';
 
 class Day extends PureComponent {
     constructor(props) {
@@ -10,14 +10,17 @@ class Day extends PureComponent {
         this.state = {
             tasks: [
                 {
+                    id: `${this.props.day} + 1`,
                     completed: false,
                     description: "",
                 },
                 {
+                    id: `${this.props.day} + 2`,
                     completed: false,
                     description: "",
                 },
                 {
+                    id: `${this.props.day} + 3`,
                     completed: false,
                     description: "",
                 }
@@ -41,15 +44,24 @@ class Day extends PureComponent {
             return < Task
                 completed={task.completed}
                 description={task.description}
+                key={task.id}
+                focus={task.focus}
             />
         })
     }
 
     addTask = () => {
-
         this.setState({
-            tasks: [...this.state.tasks, { completed: false, description: "" }]
+            tasks: [...this.state.tasks,
+            {
+                id: `${this.props.day}${this.state.tasks.length}`,
+                completed: false,
+                description: "",
+                focus: true
+            }]
         })
+
+        // Focus on most recently created class
     }
 
     removeTask = () => {
@@ -71,18 +83,15 @@ class Day extends PureComponent {
         }
 
 
-
-
-
         return (
-            <div>
+            <div className="day">
                 {/* // Add an overlap class to make vertical table lines thinner */}
                 <div style={this.props.firstDay ? null : overlapDay}>
 
                     <table className="ui celled table" style={{ width: "200px", borderRadius: 0, left: "-1px" }}>
                         <thead>
                             <tr className="ui gray">
-                                <th className="ui text center aligned">{this.props.day}</th>
+                                <th>{this.props.day}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -92,22 +101,22 @@ class Day extends PureComponent {
                 </div>
 
 
-
-                <Button.Group
-                    basic
-                    size="mini"
-                    style={{
-                        marginTop: "1rem",
-                        width: "max-content",
-                        display: "block",
-                        marginLeft: "auto",
-                        marginRight: "auto"
-                    }}
-
-                >
-                    <Button icon size="mini" onClick={this.addTask}><Icon name="plus" /></Button>
-                    <Button icon size="mini" onClick={this.removeTask}><Icon name="minus" /></Button>
-                </Button.Group>
+                <div className="add-remove-task-hover-zone">
+                    <Button.Group
+                        basic
+                        size="mini"
+                        className="add-remove-task-buttons"
+                        style={{
+                            marginTop: "1rem",
+                            width: "max-content",
+                            display: "block",
+                            marginLeft: "auto",
+                            marginRight: "auto"
+                        }}>
+                        <Button icon size="mini" onClick={this.addTask}><Icon name="plus" /></Button>
+                        <Button icon size="mini" onClick={this.removeTask}><Icon name="minus" /></Button>
+                    </Button.Group>
+                </div>
 
             </div >
         )

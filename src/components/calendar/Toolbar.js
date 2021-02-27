@@ -24,12 +24,12 @@ class Toolbar extends PureComponent {
 
             <div style={toolbarStyling}>
 
-                <Button icon labelPosition='left'>
+                <Button icon labelPosition='left' basic >
                     <Icon name='left arrow' />
                     Previous Week
 
                 </Button>
-                <Button icon labelPosition='right' disabled>
+                <Button icon labelPosition='right' basic disabled>
                     Next Week
                     <Icon name='right arrow' />
                 </Button>
