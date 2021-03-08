@@ -113,8 +113,8 @@ class Day extends PureComponent {
                             marginLeft: "auto",
                             marginRight: "auto"
                         }}>
-                        <Button icon size="mini" onClick={this.addTask}><Icon name="plus" /></Button>
-                        <Button icon size="mini" onClick={this.removeTask}><Icon name="minus" /></Button>
+                        <Button icon size="mini" onClick={this.addTask} tabIndex="-1"><Icon name="plus" /></Button>
+                        <Button icon size="mini" onClick={this.removeTask} tabIndex="-1"><Icon name="minus" /></Button>
                     </Button.Group>
                 </div>
 

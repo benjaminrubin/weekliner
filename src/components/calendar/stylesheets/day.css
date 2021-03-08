@@ -2,6 +2,10 @@
   max-width: 200px;
 }
 
+.check-box:hover {
+  cursor: pointer;
+}
+
 /* These classes show/hide the add/remove
     buttons on each day
 */
